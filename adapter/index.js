@@ -21,7 +21,7 @@ class SlackSecureMessage {
             return { session: "session_data"}
         }
 
-        this.verify_session = (public_key) => {
+        this.verify_session = (session) => {
             console.log("verifying session")
             return true;
         }
@@ -67,7 +67,7 @@ const run = () => {
     slack_message = new SlackMessage("public_key")
     slack_message.send_message("Hi")
 
-    // using the old interface with adapter
+    // using the old interface with new adapter
     slack_message_adapter = new SlackMessageAdapter(slack_message)
     slack_message_adapter.send_message("Hi")
 
